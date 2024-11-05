@@ -1,0 +1,41 @@
+const gameList = document.getElementById('game-list');
+const games = [
+  {
+    title: "1v1.lol",
+    description: "A fast-paced, skill-based shooter.",
+    imageUrl: "https://www.1v1.lol/images/logo.png",
+    link: "https://www.1v1.lol/"
+  },
+  {
+    title: "Roblox",
+    description: "A platform for user-created games.",
+    imageUrl: "https://www.roblox.com/images/brand/roblox-logo.svg",
+    link: "https://www.roblox.com/"
+  },
+  {
+    title: "Minecraft",
+    description: "A sandbox game with endless possibilities.",
+    imageUrl: "https://assets.minecraft.net/minecraft/logo.png",
+    link: "https://www.minecraft.net/"
+  },
+  {
+    title: "Eagle Craft",
+    description: "A game inspired by Minecraft, focusing on building and creativity.",
+    imageUrl: "https://via.placeholder.com/150x150.png?text=Eagle+Craft+Logo", // Replace with your own logo
+    link: "https://github.com/unknown342428/eagle-craft" // Replace with your Eagle Craft GitHub repository link
+  }
+];
+function displayGames() {
+  games.forEach(game => {
+    const gameElement = document.createElement('div');
+    gameElement.classList.add('game');
+    gameElement.innerHTML = `
+      <h2>${game.title}</h2>
+      <img src="${game.imageUrl}" alt="${game.title}">
+      <p>${game.description}</p>
+      <a href="${game.link}" target="_blank">View on GitHub</a>
+    `;
+    gameList.appendChild(gameElement);
+  });
+}
+displayGames();
